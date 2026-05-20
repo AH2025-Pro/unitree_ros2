@@ -56,6 +56,9 @@ target_compile_features(go2_stand_example PRIVATE cxx_std_20)
 add_executable(go2_robot_state_client src/go2/go2_robot_state_client.cpp src/common/motor_crc.cpp) 
 target_compile_features(go2_robot_state_client PRIVATE cxx_std_20)
 
+add_executable(go2_stair_climb_example src/go2/go2_stair_climb_example.cpp src/common/ros2_b2_sport_client.cpp)
+target_compile_features(go2_stair_climb_example PRIVATE cxx_std_20)
+
 add_executable(g1_arm_sdk_dds_example src/g1/high_level/g1_arm_sdk_dds_example.cpp src/common/motor_crc.cpp)
 target_compile_features(g1_arm_sdk_dds_example PRIVATE cxx_std_20)
 
@@ -106,6 +109,7 @@ ament_target_dependencies(go2_stand_example ${DEPENDENCY_LIST})
 
 
 ament_target_dependencies(go2_robot_state_client ${DEPENDENCY_LIST})
+ament_target_dependencies(go2_stair_climb_example ${DEPENDENCY_LIST})
 ament_target_dependencies(g1_arm_sdk_dds_example ${DEPENDENCY_LIST})
 ament_target_dependencies(g1_arm_action_example ${DEPENDENCY_LIST})
 ament_target_dependencies(g1_dex3_example ${DEPENDENCY_LIST})
@@ -150,6 +154,7 @@ install(TARGETS
 
 
 install(TARGETS go2_robot_state_client)
+install(TARGETS go2_stair_climb_example)
 install(TARGETS g1_arm_sdk_dds_example)
 install(TARGETS g1_arm_action_example)
 install(TARGETS g1_dex3_example)
